@@ -856,10 +856,13 @@
     .gallery { padding: 80px 28px; }
     .mosaic {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(4, 140px);
+      grid-template-rows: repeat(3, 140px);
     }
-    .mosaic-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
-    .mosaic-item:nth-child(4) { grid-column: span 1; }
+    .mosaic-item:nth-child(1) { grid-column: 1 / -1; grid-row: auto; }
+    .mosaic-item:nth-child(2) { grid-column: auto; grid-row: auto; }
+    .mosaic-item:nth-child(3) { grid-column: auto; grid-row: auto; }
+    .mosaic-item:nth-child(4) { grid-column: auto; grid-row: auto; }
+    .mosaic-item:nth-child(5) { grid-column: auto; grid-row: auto; }
 
     .quote-section { padding: 80px 28px; }
 
