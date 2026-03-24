@@ -494,6 +494,9 @@
     border-radius: 2px;
     overflow: hidden;
     position: relative;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   .mosaic-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
@@ -519,6 +522,105 @@
   .mosaic-item:nth-child(3) .mosaic-fill { background: var(--rose); }
   .mosaic-item:nth-child(4) .mosaic-fill { background: var(--cream); }
   .mosaic-item:nth-child(5) .mosaic-fill { background: var(--blush); }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding: 120px 80px;
+    background: var(--cream);
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 72px;
+  }
+
+  .testimonials-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .testimonials-title em { font-style: italic; color: var(--nude); }
+
+  .testimonials-sub {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-light);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    background: var(--rose);
+    padding: 44px 36px;
+    position: relative;
+    border-bottom: 3px solid var(--nude);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(168,94,78,0.12);
+  }
+
+  .testimonial-card:nth-child(2) { background: var(--lavender); margin-top: 28px; }
+  .testimonial-card:nth-child(3) { background: var(--sage); }
+
+  .testimonial-quote-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    line-height: 0.6;
+    color: rgba(168,94,78,0.2);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.75;
+    color: var(--text-dark);
+    margin-bottom: 28px;
+  }
+
+  .testimonial-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--nude);
+    margin-bottom: 20px;
+  }
+
+  .testimonial-author {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
+
+  .testimonial-role {
+    font-size: 0.72rem;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .testimonial-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-stars svg { fill: var(--nude); }
 
   /* CTA */
   .cta {
@@ -673,9 +775,17 @@
     }
 
     .hero-image {
-      height: 55vw;
-      min-height: 280px;
+      height: auto;
+      min-height: unset;
       order: -1;
+      background: var(--rose);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto !important;
+      object-fit: contain;
+      object-position: top center;
     }
 
     .hero-image-overlay { display: none; }
@@ -707,6 +817,14 @@
     .mosaic-item:nth-child(4) { grid-column: span 1; }
 
     .quote-section { padding: 80px 28px; }
+
+    .testimonials { padding: 80px 28px; }
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .testimonial-card:nth-child(2) { margin-top: 0; }
+
     .cta { padding: 80px 28px; }
 
     footer {
@@ -783,17 +901,14 @@
 
   <div class="about-visual">
     <div class="about-card">
-      <div class="about-card-num">01</div>
       <div class="about-card-label">Ensaios realizados</div>
       <div class="about-card-value">+500</div>
     </div>
     <div class="about-card">
-      <div class="about-card-num">02</div>
       <div class="about-card-label">Anos de experiência</div>
       <div class="about-card-value">8 anos</div>
     </div>
     <div class="about-card">
-      <div class="about-card-num">03</div>
       <div class="about-card-label">Localização</div>
       <div class="about-card-value">São Paulo</div>
     </div>
@@ -875,20 +990,76 @@
   </div>
 
   <div class="mosaic">
-    <div class="mosaic-item">
+    <a href="#" class="mosaic-item">
       <div class="mosaic-fill">Retratos</div>
-    </div>
-    <div class="mosaic-item">
+    </a>
+    <a href="#" class="mosaic-item">
       <div class="mosaic-fill">Gestante</div>
-    </div>
-    <div class="mosaic-item">
+    </a>
+    <a href="#" class="mosaic-item">
       <div class="mosaic-fill">Marca</div>
-    </div>
-    <div class="mosaic-item">
+    </a>
+    <a href="#" class="mosaic-item">
       <div class="mosaic-fill">Feminino</div>
-    </div>
-    <div class="mosaic-item">
+    </a>
+    <a href="#" class="mosaic-item">
       <div class="mosaic-fill">15 anos</div>
+    </a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="depoimentos">
+  <div class="testimonials-header">
+    <div class="section-label" style="justify-content:center;">Depoimentos</div>
+    <h2 class="testimonials-title">O que as minhas<br><em>clientes dizem.</em></h2>
+    <p class="testimonials-sub">Histórias reais de mulheres que viveram a experiência.</p>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <span class="testimonial-quote-icon">"</span>
+      <div class="testimonial-stars">
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="testimonial-text">A Rafaela tem um dom especial de deixar a gente à vontade. Nunca me senti tão bonita e confiante na frente de uma câmera. As fotos ficaram simplesmente perfeitas — cada uma conta uma história que é só minha.</p>
+      <div class="testimonial-divider"></div>
+      <div class="testimonial-author">Mariana Souza</div>
+      <div class="testimonial-role">Ensaio Individual · São Paulo</div>
+    </div>
+
+    <div class="testimonial-card">
+      <span class="testimonial-quote-icon">"</span>
+      <div class="testimonial-stars">
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="testimonial-text">Fiz o ensaio gestante com a Rafa e chorei quando vi as fotos. Ela capturou cada detalhe desse momento único com tanta delicadeza e sensibilidade. São imagens que vou guardar para sempre no coração.</p>
+      <div class="testimonial-divider"></div>
+      <div class="testimonial-author">Camila Ferreira</div>
+      <div class="testimonial-role">Ensaio Gestante · São Paulo</div>
+    </div>
+
+    <div class="testimonial-card">
+      <span class="testimonial-quote-icon">"</span>
+      <div class="testimonial-stars">
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p class="testimonial-text">Investir no ensaio de marca com a Rafaela foi uma das melhores decisões para o meu negócio. Ela entendeu exatamente a essência da minha marca e traduziu isso em imagens que encantam os meus clientes todos os dias.</p>
+      <div class="testimonial-divider"></div>
+      <div class="testimonial-author">Beatriz Lima</div>
+      <div class="testimonial-role">Ensaio de Marca · São Paulo</div>
     </div>
   </div>
 </section>
