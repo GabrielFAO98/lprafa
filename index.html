@@ -173,17 +173,19 @@
     position: relative;
     overflow: hidden;
     background: var(--rose);
+    max-height: 100vh; /* Garante que a imagem não ultrapasse a altura da tela */
   }
 
+
+
   .hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-    position: relative;
-    z-index: 1;
-    opacity: 1;
+  width: 100%;
+  height: 100vh; /* Faz a imagem ocupar exatamente a altura da seção hero */
+  object-fit: cover;
+  object-position: center; /* Centraliza a foto para não cortar o rosto dependendo da tela */
+  display: block;
+  position: relative;
+  z-index: 1;
   }
 
   .hero-image::before {
